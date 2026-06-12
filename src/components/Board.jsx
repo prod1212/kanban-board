@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Column from './Column'
 
 function Board({ board, onBack }) {
   const [columns, setColumns] = useState([])
@@ -54,9 +55,7 @@ function Board({ board, onBack }) {
 
       <div className="flex gap-4 items-start">
         {columns.map(column => (
-          <div key={column.id} className="bg-gray-200 rounded-lg p-4 w-64">
-            <h2 className="font-semibold text-gray-700 mb-4">{column.name}</h2>
-          </div>
+            <Column key={column.id} column={column} />
         ))}
       </div>
     </div>
